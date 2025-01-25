@@ -4,15 +4,13 @@ description: Learn how to use the enhanced data model in a Power Pages site.
 author: neerajnandwana-msft
 ms.topic: conceptual
 ms.custom: 
-ms.date: 04/11/2024
+ms.date: 04/22/2024
 ms.subservice:
 ms.author: nenandw 
-ms.reviewer: kkendrick
+ms.reviewer: danamartens
 contributors:
-    - nickdoelman
     - neerajnandwana-msft
     - gitanjalisingh33msft
-    - professorkendrick
     - DanaMartens
 ---
 
@@ -102,6 +100,7 @@ The Power Pages virtual tables represent and contain the metadata of the specifi
 > [!NOTE]
 > - If you've developed any custom code or tools that use any of the standard data model tables, you must update the code so that it uses the enhanced data model tables.
 > - These tables can't be modified.
+> - Because these tables aren't modifiable, they don't appear in the list of tables that can be used to create a relationship with the other tables. For example, Web Role (mspp_webrole), Table Permission (mspp_entitypermission), and other tables don't appear in the list of tables that can be used to create a relationship.
 
 | System table | Enhanced data model virtual table | Standard data model table |
 |---|---|---|

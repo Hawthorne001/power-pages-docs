@@ -5,9 +5,8 @@ ms.topic: overview
 ms.date: 03/19/2024
 author: ankitavish
 ms.author: avishwakarma
-ms.reviewer: kkendrick
+ms.reviewer: dmartens
 contributors:
-  - ProfessorKendrick
   - DanaMartens
 ms.custom:
   - ai-gen-docs-bap

@@ -4,23 +4,22 @@ description: This page provides a walk-through with examples for how to use Powe
 author: neerajnandwana-msft
 ms.topic: conceptual
 ms.custom: 
-ms.date: 9/27/2023
+ms.date: 10/03/2024
 ms.subservice: 
 ms.author: nenandw
 ms.reviewer: dmartens
 contributors:
     - neerajnandwana-msft
-    - nickdoelman
-    - ProfessorKendrick
+    - DanaMartens
 ---
 
 # Tutorial: Use Microsoft Power Platform CLI with Power Pages
 
-In this tutorial example, you'll see how to get started with Microsoft Power Platform CLI to update sample website configuration.
+In this tutorial, you learn how to begin using the Microsoft Power Platform CLI to update a sample website's configuration.
 
 > [!NOTE] 
 > - This tutorial focuses on the required Microsoft Power Platform CLI commands for Power Pages use. For more information about commands used in Power Platform CLI, read [Common commands](/power-platform/developer/cli/introduction#common-commands).
-> - Starting with the Power Platform CLI version 1.27, the `pac paportal` command is changed to `pac powerpages`. `paportal` continues to work, but we recommend using `powerpages` going forward. This article will soon be updated to use `powerpages` instead of `paportal`. 
+> - Starting with the Power Platform CLI version 1.27, the `pac paportal` command is changed to `pac powerpages`. `paportal` continues to work, but we recommend using `powerpages` going forward. 
 
 ## Download and install Visual Studio Code
 
@@ -52,28 +51,31 @@ Follow the prompts of authentication to sign in to the environment.
 
 ## Step 2. List available websites
 
-Use the [pac paportal list](/power-platform/developer/cli/reference/paportal) command to list the available Power Pages websites in the
+Use the [pac powerpages list](/power-platform/developer/cli/reference/paportal) command to list the available Power Pages websites in the
 Dataverse environment you connected to in the previous step.
 
-`pac paportal list`
+`pac powerpages list`
 
 :::image type="content" source="media/power-apps-cli/paportal-list.png" alt-text="Example list of websites.":::
 
 ## Step 3. Download website content
 
-Download website content from the connected Dataverse environment using the [pac paportal download](/power-platform/developer/cli/reference/paportal) command.
+Download website content from the connected Dataverse environment using the [pac powerpages download](/power-platform/developer/cli/reference/paportal) command.
 
-`pac paportal download --path [PATH] -id [WebSiteId-GUID]`
+`pac powerpages download --path [PATH] -id [WebSiteId-GUID] --modelVersion [DataModel]`
 
 **Example**
 
-`pac paportal download --path c:\pac-portals\downloads -id
-d44574f9-acc3-4ccc-8d8d-85cf5b7ad141`
+`pac powerpages download --path c:\pac-portals\downloads -id d44574f9-acc3-4ccc-8d8d-85cf5b7ad141 --modelVersion 2`
 
 For the **id** parameter, use the **WebSiteId** returned from the output of the
 previous step.
 
 :::image type="content" source="media/power-apps-cli/paportal-download.png" alt-text="Text used by screen readers.":::
+
+> [!NOTE]
+> - Use **modelVersion** `1` or `2` to indicate if the site data to be uploaded will use the the standard (1) or [enhanced data model](../admin/enhanced-data-model.md) (2).
+> - Run `pac powerpages list -v` command to view which data model is being used for your site. For more details, go to [enhanced data model](../admin/enhanced-data-model.md#determine-whether-your-site-is-using-the-standard-or-enhanced-data-model).
 
 ## Step 4. Change website content
 
@@ -107,13 +109,13 @@ directly in Visual Studio Code.
 > - Ensure that the target environment's maximum attachment size is set to the same or greater size as your source environment.
 > - The maximum size of files is determined by the **Maximum file size** setting in the [system settings email tab](/power-platform/admin/system-settings-dialog-box-email-tab) in the environment system settings dialog box.
 
-After making the required changes, upload them using the [pac paportal upload](/power-platform/developer/cli/reference/paportal) command:
+After making the required changes, upload them using the [pac powerpages upload](/power-platform/developer/cli/reference/paportal) command:
 
-`pac paportal upload --path [Folder-location]`
+`pac powerpages upload --path [Folder-location] --modelVersion [ModelVersion]`
 
 **Example**
 
-`pac paportal upload --path C:\pac-portals\downloads\custom-portal\`
+`pac powerpages upload --path C:\pac-portals\downloads\custom-portal\ --modelVersion 2` 
 
 :::image type="content" source="media/power-apps-cli/upload.png" alt-text="Starting upload.":::
 
@@ -124,7 +126,7 @@ portals content. For example, if the portal's friendly name is *custom-portal,*
 the path for the above command (--path) should be
 *C:\\pac-portals\\downloads\\custom-portal*.
 
-The upload only happens for content that's been changed. In this example, since the
+The upload only happens for content that is changed. In this example, since the
 change is made to a webpage, content is uploaded only for the adx_webpage
 table.
 
@@ -132,7 +134,7 @@ table.
 
 ### Upload the changes using deployment profile
 
-When working with multiple different environments, you may consider using deployment profiles to ensure the changes are uploaded to the correct environment using deployment profile.
+When working with multiple different environments, you might consider using deployment profiles to ensure the changes are uploaded to the correct environment using deployment profile.
 
 1. Create a folder named **deployment-profiles** inside the folder containing the portal content. For example, if the downloaded portal content is inside "starter-portal", deployment profiles folder should be inside this folder.
 
@@ -162,9 +164,9 @@ When working with multiple different environments, you may consider using deploy
 
 1. To upload the changes to a different environment using a deployment profile YAML file, [authenticate](#step-1-authenticate) to the target org first.
 
-1. After authenticated and connected to the correct environment, use the [pac paportal upload](/power-platform/developer/cli/reference/paportal) command to upload the content:
+1. After authenticated and connected to the correct environment, use the [pac powerpages upload](/power-platform/developer/cli/reference/paportal) command to upload the content:
 
-    `pac paportal upload --path "C:\portals\starter-portal" --deploymentProfile dev`
+    `pac powerpages upload --path "C:\portals\starter-portal" --deploymentProfile dev --modelVersion 2`
 
     > [!NOTE]
     > In the above example, the deployment profile name used is "dev" after following the previous steps to create a dev deployment profile. Change the name from "dev" to any other (such as QA for "qa.deployment.yml", or Test for "test.deployment.yml") if you've used a different filename for your deployment YAML file.
@@ -175,11 +177,11 @@ To confirm the changes made to the webpage:
 
 1. Select **Sync** in the Power Pages design studio.
 
-1. Browse to the webpage to see the change.
+1. To see the change, browse to the webpage.
 
     :::image type="content" source="media/power-apps-cli/changed-section.png" alt-text="View updated page content.":::
 
-1. If you've used deployment profile example [explained previously](#upload-the-changes-using-deployment-profile), the YAML snippet will update the value as shown below.
+1. If you used the deployment profile example [explained previously](#upload-the-changes-using-deployment-profile), the YAML snippet updates the value as shown in the following screenshot.
 
     :::image type="content" source="media/power-apps-cli-tutorial/browser-title-suffix.png" alt-text="Browser title suffix from Portal Management app":::
 

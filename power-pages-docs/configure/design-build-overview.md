@@ -5,13 +5,11 @@ author: pranita225
 
 ms.topic: conceptual
 ms.custom: 
-ms.date: 05/12/2023
+ms.date: 08/06/2024
 ms.subservice:
 ms.author: prpadalw
-ms.reviewer: kkendrick
+ms.reviewer: dmartens
 contributors:
-    - nickdoelman
-    - ProfessorKendrick
 ---
 
 # Overview of designing and building sites
@@ -19,9 +17,9 @@ contributors:
 The Power Pages [design studio](../getting-started/use-design-studio.md) allows you to quickly create and edit powerful websites.
 
 > [!NOTE]
-> To use the design studio, you will need to be assigned the [system administrator role](/power-platform/admin/assign-security-roles) in the same Microsoft Dataverse environment as your site. 
+> To edit sites using the design studio, you will need to be assigned the [required roles and permissions](../admin/admin-roles.md#required-roles-and-permissions) in the same Microsoft Dataverse environment as your site. 
 
-The design studio has four marquee experiences—called *workspaces*—that focus on specific user jobs:
+The design studio has five marquee experiences—called *workspaces*—that focus on specific user jobs:
 
 - **Pages workspace** enables you to design and build webpages with in-context editing and add content with no-code and low-code widgets such as text, image, video, Power BI reports, lists, forms, and others. [Learn more about the Pages workspace](../getting-started/first-page.md).
 
@@ -31,8 +29,10 @@ The design studio has four marquee experiences—called *workspaces*—that focu
 
 - **Set up workspace** enables site administrators to configure site settings such as identity providers, security and permissions, go-live configurations, and progressive web app (PWA) settings. [Learn more about the Set up workspace](setup-workspace.md).
 
+- **Security workspace** provides a single interface to monitor, protect, and manage your Power Pages sites. [Learn more about the Security workspace](../getting-started/use-security-workspace.md)
+
 ## Easily edit sites in Power Pages design studio
 
 The following video provides an overview of using the various workspaces to build a powerful website.<br />
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE557dy]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=df2f3d05-c16a-4410-975b-fa2b69a5d86a]

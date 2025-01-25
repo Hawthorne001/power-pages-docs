@@ -1,7 +1,7 @@
 ---
 title: FAQ for site copilot
 description: This FAQ to add copilot and the key considerations for making use of this technology responsibly.
-ms.date: 04/11/2024
+ms.date: 11/20/2024
 ms.custom: responsible-ai-faqs
 ms.topic: article
 author: pranita225
@@ -10,9 +10,8 @@ ms.reviewer: dmartens
 ms.collection: 
     - bap-ai-copilot
 contributors:
-    - nickdoelman
-    - ProfessorKendrick
     - nageshbhat-msft
+    - DanaMartens
 ---
 
 # FAQ for site copilot
@@ -39,9 +38,9 @@ More evaluation was performed over custom datasets for offensive and malicious p
 
 ## What are the limitations of this feature? How can users minimize the impact of the copilot limitations when using the system?
 
-- This feature doesn't include a mitigation for checking for correctness of responses returned by the copilot. Nonfactual responses might be generated if the URL from the information is gathered (and what the maker provided) contains incorrect information.
-- This feature only supports English language.
-- This feature is available for preview only in the Europe, United Kingdom, Australia, India, and United States regions.
+- This feature doesn't check the correctness of responses returned by the copilot.
+- Nonfactual responses might be generated if the source information is incorrect.
+- AI-generated responses might be inaccurate. Review content before using it.
 - GPT answers don't support websites that sell prohibitive products or services, as these terms get intentionally blocked by content moderation. An exception to this exclusion is if the content moderation slider gets set to **Low**.
 - That the copilot sometimes returns misguiding responses for high-risk domains that include healthcare finance, communications, and legal.
 
@@ -53,6 +52,6 @@ When a feature is enabled, the copilot is created with a content moderation set 
 
 ## See also
 
-- [Add a copilot in a Power Pages site (preview)](getting-started/enable-chatbot.md)
-- [Generate answers from public data using Bing search (preview)](getting-started/force-bing-index.md)
+- [Add a copilot to your Power Pages site](getting-started/enable-chatbot.md)
+- [Generate answers from public data using Bing search](getting-started/force-bing-index.md)
 - [FAQ for Copilot data security and privacy in Microsoft Power Platform](/power-platform/faqs-copilot-data-security-privacy/)
