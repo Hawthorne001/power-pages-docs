@@ -1,23 +1,22 @@
-﻿---
+---
 title: "How to: Create an image library using cloud flow and Power Pages"
 description: Learn how to create an image library in Power Pages.
 author: nageshbhat-msft
 ms.topic: how-to
 ms.custom: 
-ms.date: 11/03/2023
+ms.date: 07/16/2024
 ms.subservice: 
 ms.author: nabha
 ms.reviewer: dmartens
 contributors:
     - nageshbhat-msft
-    - ProfessorKendrick
 ---
 
 # How to: Create an image library using cloud flow and Power Pages
 
 This article provides a step-by-step guide on creating Power Pages and harnessing Power Automate cloud flows to set up an image library website. This website allows authenticated users to effectively manage and organize a gallery of images.<br />
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RW1eDxT]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=c8ecedeb-e357-4bd8-8571-f8377eff9845]
 
 ## Prerequisite
 
@@ -34,8 +33,6 @@ In this step, you create a flow using the Power Pages trigger and use OneDrive t
 1. Select site **+ Edit**.
 
 1. Under App integrations, navigate to **Set up**, then **Cloud flows**.
-
-1. Select **+ Add cloud flow**.
 
 1. Select **+ Create new flow**.
 
@@ -439,7 +436,7 @@ After creating the flow and providing access to authenticated web role, you can 
             ;
                 payload.eventData = JSON.stringify(data);
                 shell .ajaxSafePost({
-                    type: "POST", contentType: "application/json", url: _deleteImageFlowURL, data: JSON.stringify(payload), processData: false, global: false, 
+                    type: "POST", url: _deleteImageFlowURL, data: payload 
             }
             ) .done(function (response) {
                     const result = JSON.parse(response);
@@ -461,7 +458,7 @@ After creating the flow and providing access to authenticated web role, you can 
         ;
             payload.eventData = JSON.stringify(data);
             shell .ajaxSafePost({
-                type: "POST", contentType: "application/json", url: _getImageListFlowURL, data: JSON.stringify(payload), processData: false, global: false, 
+                type: "POST", url: _getImageListFlowURL, data: payload
         }
         ) .done(function (response) {
                 const result = JSON.parse(response);
@@ -506,7 +503,7 @@ After creating the flow and providing access to authenticated web role, you can 
                     ;
                      payload.eventData = JSON.stringify(data);
                      shell .ajaxSafePost({
-                         type: "POST", contentType: "application/json", url: _uploadImageFlowURL, data: JSON.stringify(payload), processData: false, global: false, 
+                         type: "POST", url: _uploadImageFlowURL, data: payload 
                 }
                 ) .done(function (response) {
                      const result = JSON.parse(response);
@@ -551,4 +548,3 @@ To test the flow integration functionality:
 1. Choose an image.
 
 1. Select **Open**.
-

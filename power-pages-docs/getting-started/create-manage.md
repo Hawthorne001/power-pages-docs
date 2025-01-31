@@ -1,16 +1,15 @@
 ---
 title: Create a site with Power Pages
 description: Learn how to create a site with Power Pages.
-author: nickdoelman
+author: dmartens
 ms.topic: conceptual
 ms.custom: 
-ms.date: 04/11/2024
+ms.date: 07/09/2024
 ms.subservice:
 ms.author: tbhagwat
-ms.reviewer: kkendrick
+ms.reviewer: danamartens
 contributors:
-    - nickdoelman
-    - ProfessorKendrick
+    - DanaMartens
 ---
 
 # Create a site with Power Pages
@@ -18,7 +17,9 @@ contributors:
 Customize and design your site using the Power Pages design studio. 
 
 > [!TIP]
-> We've created a series of tutorials and videos for you to learn to use Power Pages. You'll start with a simple site and progressively add components and features as your business requires. For more information, go to [Power Pages tutorials](tutorial-overview.md).
+> 
+> - You can [use Copilot to help you create your site in Power Pages](create-site-copilot.md). For more information, see [Overview of AI-powered and Copilot features in Power Pages](../configure/ai-copilot-overview.md).
+> - We've created a series of tutorials and videos for you to learn to use Power Pages. You'll start with a simple site and progressively add components and features as your business requires. For more information, go to [Power Pages tutorials](tutorial-overview.md).
 
 1. Go to [Power Pages](https://make.powerpages.microsoft.com/).
 
@@ -62,7 +63,6 @@ Customize and design your site using the Power Pages design studio.
 
 If [website creation is disabled in the tenant](/power-apps/maker/portals/control-portal-creation), users will also need at least one of the following roles to create a website:
 
- - [Global administrator](/power-pages/admin/admin-roles#global-administrator)
  - [Dynamics 365 administrator](/power-pages/admin/admin-roles#dynamics-365-administrator)
  - [Power Platform administrator](/power-pages/admin/admin-roles#power-platform-administrator)
 
@@ -76,9 +76,8 @@ When you create a site with a new trial environment, the site metadata for all t
 
 The following video is an overview of using Power Pages to create websites.<br />
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE557dn]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=5a509a83-addc-4851-ab2b-58c24ebe0cef]
 
 ## Next steps
 
 [Use design studio](use-design-studio.md)
-
