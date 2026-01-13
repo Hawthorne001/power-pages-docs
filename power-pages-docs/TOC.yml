@@ -603,6 +603,8 @@
           href: configure/author-server-logic.md
         - name: Server objects
           href: configure/server-objects.md
+        - name: Debug server objects
+          href: configure/server-logic-debug.md
         - name: Tutorial
           items:
            - name: "How to: interact with Dataverse tables using server logic"
