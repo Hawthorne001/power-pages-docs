@@ -206,21 +206,49 @@ import {
     Logout
 } from '@mui/icons-material';
 import React from 'react';
-
 export const AuthButton = () => {
     const username = (window as any)["Microsoft"]?.Dynamic365?.Portal?.User?.userName ?? "";
     const firstName = (window as any)["Microsoft"]?.Dynamic365?.Portal?.User?.firstName ?? "";
     const lastName = (window as any)["Microsoft"]?.Dynamic365?.Portal?.User?.lastName ?? "";
+    const tenantId = (window as any)["Microsoft"]?.Dynamic365?.Portal?.tenant ?? "";
     const isAuthenticated = username !== "";
     const [token, setToken] = React.useState<string>("");
-    
-    // @ts-ignore
-    const tenantId = import.meta.env.VITE_TENANT_ID;
 
     React.useEffect(() => {
+        const fetchAntiForgeryToken = async (): Promise<string> => {
+            try {
+                const tokenEndpoint = "/_layout/tokenhtml";
+
+                const response = await fetch(tokenEndpoint, {});
+
+                if (response.status !== 200) {
+                    throw new Error(`Failed to fetch token: ${response.status}`);
+                }
+
+                const tokenResponse = await response.text();                
+                const valueString = 'value="';
+                const terminalString = '" />';
+                const valueIndex = tokenResponse.indexOf(valueString);
+
+                if (valueIndex === -1) {
+                    throw new Error('Token not found in response');
+                }
+
+                const requestVerificationToken = tokenResponse.substring(
+                    valueIndex + valueString.length,
+                    tokenResponse.indexOf(terminalString, valueIndex)
+                );
+
+                return requestVerificationToken || '';
+            } catch (error) {
+                console.warn('[Impersonation] Failed to fetch anti-forgery token:', error);
+                return '';
+            }
+        };
+
         const getToken = async () => {
             try {
-                const token = await (window as any).shell.getTokenDeferred();
+                const token = await fetchAntiForgeryToken();
                 setToken(token);
             } catch (error) {
                 console.error('Error fetching token:', error);
