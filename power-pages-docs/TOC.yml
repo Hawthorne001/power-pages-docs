@@ -603,7 +603,7 @@
           href: configure/author-server-logic.md
         - name: Server objects
           href: configure/server-objects.md
-        - name: Debug server objects
+        - name: Debug server logic
           href: configure/server-logic-debug.md
         - name: Tutorial
           items:
