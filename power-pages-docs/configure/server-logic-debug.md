@@ -10,9 +10,9 @@ ms.topic: how-to
 
 # Debug server logic
 
-Power Pages server logic enables you to run custom JavaScript on the server side of your web application. To help validate and troubleshoot this logic during development, Power Pages provides a lightweight, local debugging experience in Visual Studio Code desktop. This debugging capability allows you to set breakpoints, step through code, and inspect variables without deploying to your live site.
+To help validate and troubleshoot server logic during development, Power Pages provides a lightweight, local debugging experience in Visual Studio Code desktop. This debugging capability allows you to set breakpoints, step through code, and inspect variables without deploying to your live site.
 
-While the runtime environment is partially mocked, it enables faster development iteration and early validation of server-side logic before deployment. This article explains how to debug server logic, what functionality is supported during debugging, and important limitations to understand.
+While the runtime environment is partially mocked, it enables faster development iteration and early validation of server logic before deployment. This article explains how to debug server logic, what functionality is supported during debugging, and important limitations to understand.
 
 ## Prerequisites
 
@@ -49,16 +49,18 @@ Server logic debugging in Power Pages uses a mock runtime environment. This mean
 
 The following functionality supports actual execution during local debugging:
 
-- **Server.Connectors.HttpClient**: This is the only object that supports actual execution. HTTP calls made using this client behave similarly to runtime execution and connect to external endpoints.
+- **[HttpClient](,/configure/server-objects#httpclient)**: This is the only object that supports actual execution. HTTP calls made using this client behave similar to runtime execution and connect to external endpoints.
 
 ### Mocked during debugging
 
 All other server logic objects are mocked and return predefined values without connecting to live services. Mocked objects include (but are not limited to):
 
-- Context objects
-- Site settings
-- User and request metadata
-- Dataverse-related APIs
+- Website
+- SiteSetting
+- User
+- Dataverse
+- Logger
+- Context
 
 These mocked objects allow you to test code structure and logic flow without requiring live connections or affecting production data.
 
@@ -68,7 +70,7 @@ To simulate real-world scenarios more accurately during debugging, you can modif
 
 1. In your project, open the following file:
 
-   `.vscode/server-logic-runtime-loader.js`
+   `.vscode/server-logic-debug-runtime.js`
 
 1. Update the predefined values for mocked objects as needed to match your testing scenarios.
 
@@ -82,11 +84,11 @@ The new mock values are used in subsequent debugging sessions, allowing you to v
 
 When debugging server logic locally, keep the following limitations in mind:
 
-- **Local-only debugging**: The debugging experience does not attach to or interact with the live Power Pages runtime environment.
-- **Desktop-only support**: Debugging is available only in Visual Studio Code Desktop, not in browser-based versions of Visual Studio Code.
-- **Mocked APIs**: Most server logic APIs are mocked and return static values rather than connecting to live services.
-- **Behavior differences**: Results observed during local debugging may differ from production behavior due to the mocked runtime environment.
-- **Limited scope**: Use local debugging primarily for validating code structure, logic flow, and HTTP client operations. Always test deployed server logic in a development or test environment before moving to production.
+- The debugging experience does not attach to or interact with the live Power Pages runtime environment.
+- Debugging is available only in Visual Studio Code Desktop, not in browser-based versions of Visual Studio Code.
+- Most server objects are mocked and return static values rather than connecting to live services.
+- Results observed during local debugging may differ from production behavior due to the mocked runtime environment.
+- Use local debugging primarily for validating code structure, logic flow, and HTTP client operations. Always test deployed server logic in a development or test environment before moving to production.
 
 ## Next steps
 
