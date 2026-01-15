@@ -4,7 +4,7 @@ description: Learn how to debug Power Pages server logic locally in Visual Studi
 author: shwetamurkute
 ms.author: nabha
 ms.reviewer: smurkute
-ms.date: 01/13/2026
+ms.date: 01/15/2026
 ms.topic: how-to
 ---
 
@@ -49,7 +49,7 @@ Server logic debugging in Power Pages uses a mock runtime environment. This mean
 
 The following functionality supports actual execution during local debugging:
 
-- **[HttpClient](,/configure/server-objects#httpclient)**: This is the only object that supports actual execution. HTTP calls made using this client behave similar to runtime execution and connect to external endpoints.
+- **[HttpClient](server-objects.md#httpclient)**: This is the only object that supports actual execution. HTTP calls made using this client behave similar to runtime execution and connect to external endpoints.
 
 ### Mocked during debugging
 
