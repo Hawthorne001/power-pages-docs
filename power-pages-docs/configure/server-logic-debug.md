@@ -35,7 +35,7 @@ Power Pages server logic debugging is enabled through a debug helper method that
 
    Once the method is added, Visual Studio Code recognizes the file as debuggable server logic.
 
-1. Select the **Debug / Run** button that appears at the beginning of the file.
+1. Select the **Debug** or **Run** button that appears at the beginning of the file.
 
 1. Set breakpoints at the required lines in your server logic code.
 
