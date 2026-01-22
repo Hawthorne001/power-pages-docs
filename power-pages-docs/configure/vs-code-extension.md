@@ -2,10 +2,9 @@
 title: Use the Visual Studio Code extension 
 description: Learn about how to use the Visual Studio Code extension for Power Pages and integrate with Microsoft Power Platform CLI for CI/CD.
 author: neerajnandwana-msft
-
 ms.topic: how-to
 ms.custom: 
-ms.date: 10/15/2025
+ms.date: 01/22/2026
 ms.subservice: 
 ms.author: nenandw
 ms.reviewer: dmartens
@@ -100,7 +99,7 @@ Right-click on Active Sites to access the following actions:
 - **Download**: Downloads the site content to a local folder for offline editing.
 - **Site Details**: Displays detailed information about the site.
 - **Reveal in Explorer**: Navigates to the local directory containing the site's code.
-- **Open in Power Pages Studio**: Opens the site in Power Pages studio.
+- **Open in Power Pages design studio**: Opens the site in Power Pages design studio.
 - **Run CodeQL screening**: Perform static code analysis on HTML and JavaScript files to identify vulnerabilities in your codebase using [**CodeQL**](https://codeql.github.com/). This option is available only for sites that are downloaded locally, indicated by the **Current** tag in the active sites list.
 
 #### Inactive Sites actions
