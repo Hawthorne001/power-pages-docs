@@ -5,7 +5,7 @@ description: Learn how to configure and secure Power Pages server logic, includi
 author: nageshbhat-msft
 ms.author: nabha
 ms.reviewer: smurkute
-ms.date: 01/05/2026
+ms.date: 01/22/2026
 ms.topic: concept-article
 ---
 
@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 Power Pages server logic lets makers run JavaScript securely on the server, adding extensibility directly to the site runtime.  
    
-Because server logic runs on the server, it's hidden from the browser and protected by web roles and table permissions. You add logic in Power Pages Studio and author it using Visual Studio Code, which provides IntelliSense and compile-time validation.  
+Because server logic runs on the server, it's hidden from the browser and protected by web roles and table permissions. You add logic in Power Pages design studio and author it using Visual Studio Code, which provides IntelliSense and compile-time validation.  
 
 Dataverse stores code and configuration, so server logic benefits from the same lifecycle management and deployment pipelines as other Power Pages components.  
 
