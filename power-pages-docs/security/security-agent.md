@@ -23,7 +23,7 @@ The chat experience is available directly within the security workspace and rema
 
 ## Capabilities
 
-As part of the public preview, the security agent offers two primary capabilities to help makers secure their Power Pages sites:
+As part of the public preview, the security agent offers these primary capabilities to help makers secure their Power Pages sites:
 
 - **Context-aware security chat**  
   The security agent includes a multistep, conversational chat panel built directly into the security workspace. Through chat, makers can:
@@ -39,8 +39,6 @@ As part of the public preview, the security agent offers two primary capabilitie
 
 - **Site traffic monitoring**  
   The agent monitors live traffic by using Microsoft Sentinel signals and historical traffic data. When it detects suspicious spikes or clustered activity, it generates alerts and presents mitigation workflows.
-
-Some recommendations are AI-generated, especially for complex problems like correcting CSP configurations or suggesting custom WAF rules. Others follow standard rule-based logic for known security best practices.
 
 ## How does it work?
 
@@ -93,6 +91,8 @@ Each fix you apply updates the alert status and helps keep the site secure.
 ### 5. Use chat to understand and fix problems
 
 For any alert or security-related question, makers can open the security agent chat panel.
+
+:::image type="content" source="media/security-agent/security-agent-chat.png" alt-text="Screenshot of the security agent chat in Power Pages design studio.":::
 
 Through chat, the agent:
 
