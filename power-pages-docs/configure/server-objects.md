@@ -106,6 +106,17 @@ Allows you to read site setting values for the current website.
 Server.SiteSetting.Get("Search/Enabled");
 ```
 
+## EnvironmentVariable
+
+Allows reading the value of an environment variable.
+
+**Example**
+
+```javascript
+Server.EnvironmentVariable.get("SITEPATH");
+```
+
+
 ## Website
 
 Provides details of the current website record in Dataverse.
@@ -155,7 +166,9 @@ Server.Connector.Dataverse.CreateRecord("accounts", "{\"name\": \"Contoso Ltd.\"
 Retrieves a single record by ID. 
 
 ```javascript
-Server.Connector.Dataverse.RetrieveRecord(string entitySetName, string id, string options = null)
+Server.Connector.Dataverse.RetrieveRecord(string entitySetName, string id)
+Server.Connector.Dataverse.RetrieveRecord(string entitySetName, string id, string options)
+Server.Connector.Dataverse.RetrieveRecord(string entitySetName, string id, string options, bool skipCache)
 ```
 
 **Example**
@@ -169,7 +182,9 @@ Server.Connector.Dataverse.RetrieveRecord("accounts", "00000000-0000-0000-0000-0
 Retrieves a collection of records. 
 
 ```javascript
-Server.Connector.Dataverse.RetrieveMultipleRecords(string entitySetName, string options = null)   
+Server.Connector.Dataverse.RetrieveMultipleRecords(string entitySetName)
+Server.Connector.Dataverse.RetrieveMultipleRecords(string entitySetName, string options)
+Server.Connector.Dataverse.RetrieveMultipleRecords(string entitySetName, string options, bool skipCache) 
 ```
 
 **Example**
