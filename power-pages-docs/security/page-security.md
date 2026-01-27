@@ -108,7 +108,7 @@ Use a restrict read rule to limit viewing the contents of a page, and its child 
 For example, only employees may view a certain branch of your site. You want to restrict the ability to read this branch to people who have the employee web role. In this case, you create a rule called "restrict read to employees only." You set **Right** to **Restrict Read** and **Web Page** to the page at the top of the branch that's intended only for employees. Then you associate the rule with the employee web role and assign users to the role.
 
 > [!WARNING]
-> Grant change rules override restrict read rules. By default, the admins web role has a grant change rule on the home page with scope "All content", which grants access to all pages regardless of restrict read rules. If you need to restrict pages from admins, first remove the admins role from the grant change rule on the home page.
+> Grant change rules on the home page with scope 'All content' override restrict read rules site-wide. To restrict pages from a role with home page grant change, remove that role from the home page rule.
 
 > [!NOTE]
 > If you apply the restrict read right to the home page of a site and select **Exclude direct child web files** as the **Scope**, the home page's direct child web files are accessible to all users.
