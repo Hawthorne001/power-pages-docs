@@ -76,20 +76,6 @@ All the access control rules for the page are listed.
 
 There are two types of access control rules: grant change and restrict read. Grant change rules are *permissive*. They grant users the ability to do something. Restrict read rules are *restrictive*. They restrict an action to a limited set of users.
 
-### Default web page access control rules
-
-When you provision a Power Pages site, the following web page access control rule is created by default:
-
-| Rule | Web Page | Right | Web Role | Scope |
-| --- | --- | --- | --- | --- |
-| Grant change on home page | Home | Grant change | Admins | All content |
-
-This default rule has the following implications for page visibility:
-
-- **Admins can view all pages**: Because grant change rules override restrict read rules, users with the admins web role can access every page on the site, regardless of any restrict read rules you create.
-- **Restrict read rules don't apply to admins**: Even if you create restrict read rules to limit access to specific pages, admins can still view those pages because the grant change rule on the home page with scope "All content" grants them access to the entire site.
-- **To restrict pages from admins**: If you need to prevent admins from viewing certain pages, first remove the admins role from the grant change rule on the home page, or change the scope of the rule.
-
 #### Grant change
 
 Use a grant change rule to allow a user who has the web role associated with the rule to publish content changes for the page and all child pages. Grant change rules take precedence over restrict read rules.
