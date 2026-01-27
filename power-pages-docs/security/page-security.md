@@ -82,7 +82,7 @@ When you provision a Power Pages site, the following web page access control rul
 
 | Rule | Web Page | Right | Web Role | Scope |
 | --- | --- | --- | --- | --- |
-| Grant Change on Home Page | Home | Grant Change | Admins | All content |
+| Grant change on home page | Home | Grant change | Admins | All content |
 
 This default rule has the following implications for page visibility:
 
