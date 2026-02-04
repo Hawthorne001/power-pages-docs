@@ -25,7 +25,6 @@ Dataverse stores code and configuration, so server logic benefits from the same 
 >
 > - This feature is a preview feature.
 > - Preview features aren’t meant for production use and might have restricted functionality. These features are subject to [supplemental terms of use](https://go.microsoft.com/fwlink/?linkid=2189520), and are available before an official release so that customers can get early access and provide feedback.
-> - This feature is available only for site running on [Enhanced Data Model](../admin/enhanced-data-model.md).
 
 ## Language support
 
