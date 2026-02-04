@@ -5,7 +5,7 @@ description: Learn how to use built-in server objects like Logger, HttpClient, a
 author: nageshbhat-msft
 ms.author: nabha
 ms.reviewer: smurkute
-ms.date: 11/12/2025
+ms.date: 02/04/2026
 ms.topic: reference
 ---
 
@@ -108,7 +108,7 @@ Server.SiteSetting.Get("Search/Enabled");
 
 ## EnvironmentVariable
 
-Allows reading the value of an environment variable.
+Reads the value of an environment variable.
 
 **Example**
 
